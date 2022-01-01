@@ -20,7 +20,6 @@ $(function () {
 
   $('header .gnb a').on('mouseenter focus', function () {
     let idx = $(this).parent('li').index();
-    console.log(idx);
     $('header .menu_area .ani_area > div').fadeOut().removeClass('on');
     $('header .menu_area .ani_area > div').eq(idx).fadeIn().addClass('on');
 
@@ -44,11 +43,11 @@ $(function () {
     })
   }
 
-  function fixedBtn(){
+  function fixedBtn() {
     $('.main_video').mouseleave(function () {
       if ($(window).width() > 1024) {
         $('.main_video .play_btn').removeClass('fixed');
-      
+
         gsap.to('.main_video .play_btn', {
           x: 0,
           y: 0,
@@ -74,6 +73,12 @@ $(function () {
     fixedBtn();
   });
 
+  $('.main_video .down_btn').click(function (e) {
+    let sc_intro = $('.sc_intro').offset().top;
+    $('html, body').animate({
+      scrollTop: sc_intro
+    }, 500)
+  })
 
   $('section .img_wrap').each(function (index, item) {
     let triggerEl = $(this).parents('section');
@@ -91,36 +96,50 @@ $(function () {
       })
   });
 
-  $('section .img_area').each(function (index, item) {
-    let triggerEl = $(this).parents('section');
-    let yVal = $(this).data('y') ? $(this).data('y') : 0;
-
-    gsap.from(
-      item, {
-        scrollTrigger: {
-          trigger: triggerEl,
-          start: 'top 80%',
-          end: 'bottom top',
-          scrub: 1,
-        },
-        yPercent: yVal,
-      })
-  });
-
-  $('.sc_games .game_list a').on('mouseenter focus', function () {
-    let idx = $(this).parents('li').index();
-
-    $('.sc_games .game_list a').removeClass('on');
-    $('.sc_games .img_wrap .inner, .sc_games .sub_txt p').removeClass('on');
-    $('.sc_games .img_wrap .inner').eq(idx).addClass('on')
-    $('.sc_games .sub_txt p').eq(idx).addClass('on')
+  ScrollTrigger.matchMedia({
+    "(min-width: 1024px)": function() {
+      gsap.from(
+        $('.sc_event .img_area'), {
+          scrollTrigger: {
+            trigger: $('.sc_event'),
+            start: 'top 80%',
+            end: 'bottom top',
+            scrub: 1,
+          },
+          yPercent: $('.sc_event .img_area').data('pc_y'),
+        }
+      )
+    }, 
+    
+    "(max-width: 1023px)": function() {
+      gsap.from(
+        $('.sc_event .img_area'), {
+          scrollTrigger: {
+            trigger: $('.sc_event'),
+            start: 'top 80%',
+            end: 'bottom top',
+            scrub: 1,
+          },
+          yPercent: $('.sc_event .img_area').data('mobile_y'),
+        }
+      )
+    }, 
   })
 
-  $('.sc_location .content img').each(function (index, item) {
+  $('.sc_variety .variety_list a').on('mouseenter focus', function () {
+    let idx = $(this).parents('li').index();
+
+    $('.sc_variety .variety_list a').removeClass('on');
+    $('.sc_variety .img_wrap .inner, .sc_variety .sub_txt p').removeClass('on');
+    $('.sc_variety .img_wrap .inner').eq(idx).addClass('on')
+    $('.sc_variety .sub_txt p').eq(idx).addClass('on')
+  })
+
+  $('.sc_brand .content img').each(function (index, item) {
 
     gsap.from(item, {
       scrollTrigger: {
-        trigger: $('.sc_location'),
+        trigger: $('.sc_brand'),
         start: 'top 80%',
         end: 'bottom bottom',
         scrub: 1,
@@ -162,14 +181,26 @@ $(function () {
     })
   });
 
-  $('.sc_location .location_list h3 > a').on('mouseenter focus', function () {
+  $('.sc_brand .brand_list h3 > a').on('mouseenter focus', function () {
     let idx = $(this).parents('li').index();
 
     if (!$(this).hasClass('on')) {
       $(this).parents('li').siblings().find('a').removeClass('on');
       $(this).addClass('on');
-      $('.sc_location .content > img').eq(idx).siblings('img').removeClass('on').addClass('off');
-      $('.sc_location .content > img').eq(idx).removeClass('off').addClass('on');
+      $('.sc_brand .content > img').eq(idx).siblings('img').removeClass('on').addClass('off');
+      $('.sc_brand .content > img').eq(idx).removeClass('off').addClass('on');
     }
   });
+
+
+
+
+
+
+
+
+
+
+
+
 })
