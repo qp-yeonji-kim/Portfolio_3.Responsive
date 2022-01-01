@@ -878,5 +878,7 @@ footer .policy_wrap span {
 }
 
 @media screen and (min-width: 1680px) {
-
+  header .menu_area .gnb li{
+    margin-bottom: 3em;
+  }
 }

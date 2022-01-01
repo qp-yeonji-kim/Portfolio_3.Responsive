@@ -1024,6 +1024,17 @@ main .main_video {
     display: flex;
     align-items: center;
     margin: 8rem 0 5rem;
+    
+  }
+
+  .sc_brand::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5rem;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0, rgba(170, 110, 255, 0.386), rgba(107, 76, 150, 0) 80%); 
   }
 
   .sc_brand .title_wrap>* {
@@ -1297,6 +1308,32 @@ main .main_video {
   .sc_event .content p{
     width: 74%;
     font-size: 22px;
+    line-height: 1.5em;
+  }
+  .sc_event .content strong{
+    font-size: 22px;
+  }
+  .sc_event .content .all_event{
+    font-size: 18px;
+  }
+  .sc_best .title_area>*{
+    font-size: 60px;
+  }
+  .sc_best .content .sub_title{
+    font-size: 50px;
+  }
+  .sc_best .content .sub_txt p{
+    font-size: 22px;
+    line-height: 1.5em;
+  }
+  .sc_best .content .sub_txt strong{
+    font-size: 18px;
+  }
+  .sc_brand .title_wrap>*{
+    font-size: 68px;
+  }
+  .sc_brand .brand_list li a{
+    font-size: 68px;
   }
 }
 
@@ -1308,13 +1345,13 @@ main .main_video {
 
   99% {
     display: block;
-    opacity: 1;
+    opacity: .7;
     transform: rotate(0);
   }
 
   100% {
     display: block;
-    opacity: 1;
+    opacity: .7;
     transform: rotate(0);
   }
 }
