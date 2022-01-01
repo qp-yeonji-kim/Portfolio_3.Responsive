@@ -108,7 +108,7 @@ main .main_video {
 .main_video .down_btn {
   position: absolute;
   left: 50%;
-  bottom: 20%;
+  bottom: 4%;
   transform: translateX(-50%);
   display: block;
   width: 4rem;
@@ -1271,6 +1271,31 @@ main .main_video {
 
   .sc_brand .content .more_btn span {
     width: 14rem;
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .sc_variety .title_wrap{
+    left: 6rem;
+  }
+  .sc_variety .title_wrap>*{
+    font-size: 98px;
+  }
+  .sc_variety .txt_wrap .variety_list li a{
+    font-size: 52px;
+  }
+  .sc_variety .txt_wrap .sub_txt p{
+    font-size: 22px;
+  }
+  .sc_event .title_area>*{
+    font-size: 50px;
+  }
+  .sc_event .content .sub_title{
+    font-size: 50px;
+  }
+  .sc_event .content p{
+    width: 74%;
     font-size: 22px;
   }
 }
