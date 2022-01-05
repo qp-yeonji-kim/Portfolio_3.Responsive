@@ -382,6 +382,10 @@ main .main_video {
   background: rgba(0, 0, 0, .1);
 }
 
+.sc_gallery .badge.img_wrap::after {
+  background: none;
+}
+
 .sc_gallery .img_wrap.img01 {
   padding-bottom: 117.57%;
 }
@@ -417,21 +421,19 @@ main .main_video {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: no-repeat center / contain;
 }
 
 .sc_gallery .badge .outer_cir {
   top: 0;
   left: 0;
-  background-image: url('https://www.bouncepingpong.com/svg/circle-good-vibes-all-round-stroke.svg');
+  background-image: url('../images/round_out.png');
 }
 
 .sc_gallery .badge .inner_cir {
   width: 80%;
   height: 80%;
-  background-image: url('https://www.bouncepingpong.com/svg/circle-good-vibes-all-round-fill.svg');
+  background-image: url('../images/round_in.png');
 }
 
 .sc_event {
