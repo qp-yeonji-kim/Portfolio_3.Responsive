@@ -73,7 +73,7 @@ $(function () {
     fixedBtn();
   });
 
-  $('.main_video .down_btn').click(function (e) {
+  $('.main_video .down_btn').click(function () {
     let sc_intro = $('.sc_intro').offset().top;
     $('html, body').animate({
       scrollTop: sc_intro
