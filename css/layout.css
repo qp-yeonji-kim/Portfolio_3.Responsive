@@ -264,11 +264,6 @@ footer .menu_area .logo_area .logo {
   width: 6.2rem;
   height: 2.2rem;
   margin-bottom: 2rem;
-}
-
-footer .menu_area .logo_area .logo a {
-  display: block;
-  height: 100%;
   background: url('../images/logo_w.png') no-repeat center / contain;
 }
 

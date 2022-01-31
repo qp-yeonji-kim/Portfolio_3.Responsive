@@ -9,7 +9,7 @@ main .main_video {
   height: 100vh;
 }
 
-.main_video .title {
+.main_video .marquee_area {
   position: absolute;
   left: 0;
   top: 50%;
@@ -33,7 +33,7 @@ main .main_video {
   animation: marquee_left 18s linear infinite;
 }
 
-.main_video .marquee span {
+.main_video .marquee > * {
   float: left;
   width: 50%;
   font-family: Ash;
@@ -944,7 +944,7 @@ main .main_video {
   .sc_event .content {
     width: 69%;
     padding: 2.4rem;
-    box-shadow: rgb(25 25 25 / 30%) 0px 0px 7px;
+    box-shadow: rgba(25 25 25 .3) 0px 0px 7px;
   }
 
   .sc_event .img_area {
