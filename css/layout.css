@@ -81,6 +81,7 @@ header .util_wrap {
 }
 
 header .menu_btn {
+  display: block;
   position: fixed;
   top: 1.1rem;
   right: 1rem;

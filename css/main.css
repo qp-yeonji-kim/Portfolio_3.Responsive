@@ -683,7 +683,7 @@ main .main_video {
   height: 100%;
   opacity: .7;
   object-fit: cover;
-  transition: opacity 1.2s cubic-bezier(.215, .61, .355, 1) .5s, scale 1.2s cubic-bezier(.215, .61, .355, 1);
+  transition: opacity 1.2s cubic-bezier(.215, .61, .355, 1) .5s, transform 1.2s cubic-bezier(.215, .61, .355, 1);
 }
 
 .sc_brand .content img:first-child {
